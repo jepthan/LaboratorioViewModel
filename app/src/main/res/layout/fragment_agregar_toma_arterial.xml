@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:layout_weight="1"
+    android:orientation="vertical"
+    tools:context=".AgregarTomaArterialFragment">
+
+    <EditText
+        android:id="@+id/SistonicaTextView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="100px"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Sistonica"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/diastolicaTextView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="100px"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Diastolica"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/pulsoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="100px"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Pulso"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btn_AddTomaArterial"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="150px"
+        android:layout_weight="1"
+        android:text="Agregar Toma Arterial"
+        app:cornerRadius="0px" />
+</LinearLayout>
