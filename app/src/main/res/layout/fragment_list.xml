@@ -7,13 +7,13 @@
     tools:context=".ListFragment"
     android:orientation="vertical">
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_TomaArterial"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
 
-    </ListView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 </LinearLayout>

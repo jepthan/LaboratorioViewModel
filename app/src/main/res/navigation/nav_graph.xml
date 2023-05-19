@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/ListFragment"
         android:name="cr.ac.una.controlarterial.ListFragment"
-        android:label="List Fragment"
+        android:label="Control Arterial"
         tools:layout="@layout/fragment_list">
 
         <action

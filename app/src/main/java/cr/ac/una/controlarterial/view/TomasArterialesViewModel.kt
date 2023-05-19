@@ -14,6 +14,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.UUID
 
 class TomasArterialesViewModel: ViewModel() {
     lateinit var apiService : TomaArterialDao
@@ -30,6 +31,22 @@ class TomasArterialesViewModel: ViewModel() {
                 _ListMutableData.value = Datos!!
             }
         }
+    }
+    fun deleteitem(uuid :String){
+        GlobalScope.launch(Dispatchers.IO) {
+            apiService.deleteItem(uuid)
+        }
+
+    }
+    fun AddItem(item :List<TomaArterial>){
+        initService()
+        GlobalScope.launch(Dispatchers.IO){
+            apiService.createItem(item)
+            withContext(Dispatchers.Main){
+                updatelist()
+            }
+        }
+
     }
 
     fun initService(){

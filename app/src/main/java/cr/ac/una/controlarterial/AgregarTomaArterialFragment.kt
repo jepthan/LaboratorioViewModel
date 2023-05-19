@@ -8,13 +8,21 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.findFragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import cr.ac.una.controlarterial.entity.TomaArterial
+import cr.ac.una.controlarterial.view.TomasArterialesViewModel
 
 
 class AgregarTomaArterialFragment : Fragment() {
 
+    private lateinit var viewModel : TomasArterialesViewModel
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(TomasArterialesViewModel::class.java)
 
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,13 +44,22 @@ class AgregarTomaArterialFragment : Fragment() {
         var sistonicaview = view.findViewById<EditText>(R.id.SistonicaTextView)
         var Diastolicaview = view.findViewById<EditText>(R.id.diastolicaTextView)
         var Pulsoview = view.findViewById<EditText>(R.id.pulsoTextView)
+
+
         btnadd.setOnClickListener { x ->
+
+            var item =  TomaArterial(sistonicaview.text.toString().toInt(),Diastolicaview.text.toString().toInt(), Pulsoview.text.toString().toInt(),null)
+            var items = ArrayList<TomaArterial>()
+            items.add(item)
+
+            viewModel.AddItem(items)
 
             var fab = getActivity()?.findViewById<FloatingActionButton>(R.id.fab)
             fab?.show()
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 
         }
+
 
     }
 
