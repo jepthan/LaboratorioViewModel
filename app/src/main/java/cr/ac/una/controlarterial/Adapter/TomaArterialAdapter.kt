@@ -1,11 +1,11 @@
 package cr.ac.una.controlarterial.Adapter
 
-import android.content.Context
+//import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+//import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cr.ac.una.controlarterial.R
@@ -76,11 +76,30 @@ class TomaArterialAdapter(var tomasArteriales: ArrayList<TomaArterial>) :
         val ritmoTextView = itemView.findViewById<TextView>(R.id.ritmo)
 
 
+
         fun bind(tomaArterial: TomaArterial) {
-            itemView.setBackgroundColor (Color.LTGRAY)
+
+            val isistolica = tomaArterial.Sistolica.toString().toInt()
+            val idistolica = tomaArterial.Diastolica.toString().toInt()
+            //var pulso = tomaArterial.Pulso.toString().toInt()
+
+
+            if(isistolica < 120 && idistolica < 80){
+                itemView.setBackgroundColor (Color.GREEN)
+            }else if(isistolica < 130 && idistolica < 80){
+                itemView.setBackgroundColor (Color.YELLOW)
+            }else if(isistolica < 139 && idistolica < 90){
+                itemView.setBackgroundColor (Color.rgb(242, 74, 54))
+            }else if(isistolica < 140 && idistolica > 90){
+                itemView.setBackgroundColor (Color.rgb(120, 18, 42))
+            }else if(isistolica > 180 && idistolica > 120){
+                itemView.setBackgroundColor (Color.RED)
+            }
             sistolicaTextView.text = tomaArterial.Sistolica.toString()
             distolicaTextView.text = tomaArterial.Diastolica.toString()
             ritmoTextView.text = tomaArterial.Pulso.toString()
+
+
         }
     }
 

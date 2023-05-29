@@ -67,7 +67,7 @@ class ListFragment : Fragment() {
         listView.layoutManager = LinearLayoutManager(requireContext())
 
 
-        viewModel.updatelist()
+        viewModel.updatelist(requireContext())
 
         viewModel.listLiveData.observe(viewLifecycleOwner,{ elements->
             adapter.updateData(elements as ArrayList<TomaArterial>)
@@ -76,7 +76,7 @@ class ListFragment : Fragment() {
 
         // Se llama el código del ViewModel que cargan los datos
         GlobalScope.launch(Dispatchers.Main) {
-            viewModel.updatelist()
+            viewModel.updatelist(requireContext())
         }
 
 
@@ -91,7 +91,7 @@ class ListFragment : Fragment() {
                 if (position!=0) {
                     // Elimina el elemento cuando se detecta el deslizamiento hacia la derecha
 
-                    viewModel.deleteitem(tomasArteriales.get(position)._uuid!!)
+                    viewModel.deleteitem(tomasArteriales.get(position)._uuid!!, requireContext())
                     (tomasArteriales as MutableList<TomaArterial>).removeAt(position)
                     adapter.updateData(tomasArteriales as ArrayList<TomaArterial>)
                 }

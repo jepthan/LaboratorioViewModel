@@ -12,6 +12,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.FirebaseApp
 import cr.ac.una.controlarterial.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
                 view.hide()
             }
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -52,7 +52,7 @@ class AgregarTomaArterialFragment : Fragment() {
             var items = ArrayList<TomaArterial>()
             items.add(item)
 
-            viewModel.AddItem(items)
+            viewModel.AddItem(items, view.context)
 
             var fab = getActivity()?.findViewById<FloatingActionButton>(R.id.fab)
             fab?.show()

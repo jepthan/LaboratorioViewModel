@@ -1,71 +1,66 @@
 package cr.ac.una.controlarterial.view
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import cr.ac.una.controlarterial.AuthInterceptor
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.initialize
 import cr.ac.una.controlarterial.entity.TomaArterial
-import cr.ac.una.jsoncrud.dao.TomaArterialDao
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import java.util.UUID
+import kotlinx.coroutines.currentCoroutineContext
+import kotlin.coroutines.coroutineContext
 
 class TomasArterialesViewModel: ViewModel() {
-    lateinit var apiService : TomaArterialDao
+    lateinit var database : FirebaseDatabase
+    private lateinit var TomaArterialReff: DatabaseReference
     private val _ListMutableData: MutableLiveData<List<TomaArterial>> = MutableLiveData()
     val listLiveData : LiveData<List<TomaArterial>> =_ListMutableData
 
-    fun updatelist(){
-        initService()
 
-        GlobalScope.launch(Dispatchers.IO) {
+    fun updatelist(context: Context){
 
-            var Datos = apiService.getItems().items
-            withContext(Dispatchers.Main){
-                _ListMutableData.value = Datos!!
+        initService(context)
+
+        TomaArterialReff = database.getReference("TomaArterial")
+        TomaArterialReff.get().addOnSuccessListener {
+            val list = mutableListOf<TomaArterial>()
+            it.children.forEach { x->
+                val item = x.getValue(TomaArterial::class.java)
+                item?._uuid = x.key
+                if (item != null) {
+                    list.add(item)
+                }
             }
-        }
-    }
-    fun deleteitem(uuid :String){
-        GlobalScope.launch(Dispatchers.IO) {
-            apiService.deleteItem(uuid)
+            _ListMutableData.value = list
         }
 
+
     }
-    fun AddItem(item :List<TomaArterial>){
-        initService()
-        GlobalScope.launch(Dispatchers.IO){
-            apiService.createItem(item)
-            withContext(Dispatchers.Main){
-                updatelist()
-            }
+    fun deleteitem(uuid :String,context: Context){
+        initService(context)
+        database.getReference("TomaArterial/${uuid}").removeValue()
+
+    }
+    fun AddItem(item :List<TomaArterial>,context: Context){
+
+        initService(context)
+
+        TomaArterialReff = database.getReference("TomaArterial")
+        item.forEach { x->
+            val TomaArterialId = TomaArterialReff.push().key
+            TomaArterialReff.child(TomaArterialId!!).setValue(x)
         }
-
     }
 
-    fun initService(){
-        val interceptor = HttpLoggingInterceptor()
-        interceptor.level = HttpLoggingInterceptor.Level.BODY
+    fun initService(context: Context){
 
-        val client = OkHttpClient.Builder()
-            .addInterceptor(AuthInterceptor("TGpxJJkXwkg38zO0Cgv9F80pwe1tOwq3rC2WD7_XwH7LZ3wYRg"))
-            .addInterceptor(interceptor)
-            .build()
+        FirebaseApp.initializeApp(context)
+        // Inicializar Firebase
+        database = FirebaseDatabase.getInstance()
 
-        //val gson = GsonBuilder().setPrettyPrinting().create()
 
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://crudapi.co.uk/api/v1/")
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        apiService = retrofit.create(TomaArterialDao::class.java)
     }
 }

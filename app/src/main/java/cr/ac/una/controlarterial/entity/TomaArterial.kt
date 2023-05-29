@@ -1,8 +1,10 @@
 package cr.ac.una.controlarterial.entity
 
 data class TomaArterial(
-    val Sistolica: Int,
-    val Diastolica: Int,
-    val Pulso: Int,
-    val _uuid:String?
-)
+    var Sistolica: Int,
+    var Diastolica: Int,
+    var Pulso: Int,
+    var _uuid:String?
+) {
+    constructor() : this(0, 0, 0, "")
+}

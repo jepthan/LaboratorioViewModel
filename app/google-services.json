@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "125034437704",
+    "project_id": "controlarterial-d4345",
+    "storage_bucket": "controlarterial-d4345.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125034437704:android:c636f23ef4d688218f4c7d",
+        "android_client_info": {
+          "package_name": "cr.ac.una.controlarterial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCah84O0x8g7D-sLX_BUuhtfp2w63RgE4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
