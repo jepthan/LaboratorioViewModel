@@ -1,4 +1,4 @@
-package cr.ac.una.controlarterial
+package cr.ac.una.controlarterialJefteGeysel
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package cr.ac.una.controlarterial
+package cr.ac.una.controlarterialJefteGeysel
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import androidx.fragment.app.findFragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import cr.ac.una.controlarterial.entity.TomaArterial
-import cr.ac.una.controlarterial.view.TomasArterialesViewModel
+import cr.ac.una.controlarterial.R
+import cr.ac.una.controlarterialJefteGeysel.entity.TomaArterial
+import cr.ac.una.controlarterialJefteGeysel.view.TomasArterialesViewModel
 
 
 class AgregarTomaArterialFragment : Fragment() {

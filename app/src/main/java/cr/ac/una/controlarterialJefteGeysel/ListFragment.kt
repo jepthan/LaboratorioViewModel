@@ -1,6 +1,5 @@
-package cr.ac.una.controlarterial
+package cr.ac.una.controlarterialJefteGeysel
 
-import android.annotation.SuppressLint
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
@@ -9,26 +8,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
 import androidx.core.content.ContextCompat
-import androidx.core.view.forEach
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import cr.ac.una.controlarterial.Adapter.TomaArterialAdapter
-import cr.ac.una.controlarterial.entity.TomaArterial
-import cr.ac.una.controlarterial.entity.TomasArteriales
-import cr.ac.una.controlarterial.view.TomasArterialesViewModel
-import cr.ac.una.jsoncrud.dao.TomaArterialDao
+import cr.ac.una.controlarterial.R
+import cr.ac.una.controlarterialJefteGeysel.Adapter.TomaArterialAdapter
+import cr.ac.una.controlarterialJefteGeysel.entity.TomaArterial
+import cr.ac.una.controlarterialJefteGeysel.view.TomasArterialesViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 
 private const val ARG_PARAM1 = "param1"

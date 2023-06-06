@@ -1,4 +1,4 @@
-package cr.ac.una.controlarterial.view
+package cr.ac.una.controlarterialJefteGeysel.view
 
 import android.content.Context
 import androidx.lifecycle.LiveData
@@ -7,11 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ktx.getValue
-import com.google.firebase.ktx.initialize
-import cr.ac.una.controlarterial.entity.TomaArterial
-import kotlinx.coroutines.currentCoroutineContext
-import kotlin.coroutines.coroutineContext
+import cr.ac.una.controlarterialJefteGeysel.entity.TomaArterial
 
 class TomasArterialesViewModel: ViewModel() {
     lateinit var database : FirebaseDatabase

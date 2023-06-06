@@ -10,7 +10,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "cr.ac.una.controlarterial"
+        applicationId "cr.ac.una.controlarterialJefteGeysel"
         minSdk 28
         targetSdk 33
         versionCode 1

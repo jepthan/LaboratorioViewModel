@@ -1,15 +1,16 @@
 {
   "project_info": {
     "project_number": "125034437704",
+    "firebase_url": "https://controlarterial-d4345-default-rtdb.firebaseio.com",
     "project_id": "controlarterial-d4345",
     "storage_bucket": "controlarterial-d4345.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:125034437704:android:c636f23ef4d688218f4c7d",
+        "mobilesdk_app_id": "1:125034437704:android:146f2cc5a3b81edc8f4c7d",
         "android_client_info": {
-          "package_name": "cr.ac.una.controlarterial"
+          "package_name": "cr.ac.una.controlarterialJefteGeysel"
         }
       },
       "oauth_client": [],

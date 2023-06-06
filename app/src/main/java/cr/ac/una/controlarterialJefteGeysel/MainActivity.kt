@@ -1,7 +1,6 @@
-package cr.ac.una.controlarterial
+package cr.ac.una.controlarterialJefteGeysel
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.navigation.findNavController
@@ -10,10 +9,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.FirebaseApp
+import cr.ac.una.controlarterial.R
 import cr.ac.una.controlarterial.databinding.ActivityMainBinding
+//import cr.ac.una.controlarterialJefteGeysel.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

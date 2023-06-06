@@ -1,4 +1,4 @@
-package cr.ac.una.controlarterial.entity
+package cr.ac.una.controlarterialJefteGeysel.entity
 
 data class TomaArterial(
     var Sistolica: Int,

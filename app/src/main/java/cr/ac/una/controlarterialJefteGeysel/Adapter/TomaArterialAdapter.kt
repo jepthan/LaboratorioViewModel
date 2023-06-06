@@ -1,4 +1,4 @@
-package cr.ac.una.controlarterial.Adapter
+package cr.ac.una.controlarterialJefteGeysel.Adapter
 
 //import android.content.Context
 import android.graphics.Color
@@ -9,7 +9,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cr.ac.una.controlarterial.R
-import cr.ac.una.controlarterial.entity.TomaArterial
+//import cr.ac.una.controlarterialJefteGeysel.R
+import cr.ac.una.controlarterialJefteGeysel.entity.TomaArterial
 
 class TomaArterialAdapter(var tomasArteriales: ArrayList<TomaArterial>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {

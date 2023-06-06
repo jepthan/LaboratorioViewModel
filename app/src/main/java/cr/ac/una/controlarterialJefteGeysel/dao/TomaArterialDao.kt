@@ -1,7 +1,7 @@
 package cr.ac.una.jsoncrud.dao
 
-import cr.ac.una.controlarterial.entity.TomaArterial
-import cr.ac.una.controlarterial.entity.TomasArteriales
+import cr.ac.una.controlarterialJefteGeysel.entity.TomaArterial
+import cr.ac.una.controlarterialJefteGeysel.entity.TomasArteriales
 import retrofit2.http.*
 
 interface TomaArterialDao {
